@@ -1,0 +1,490 @@
+using System.Text;
+
+namespace C_Course
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            #region String Formatting
+            // Equation: 10 + 5 = 15
+            //int x = 10, y = 5;
+            //int Result = x + y;
+
+            //string message;
+
+            /// 1. string Interpolation
+            //message = $"Equation: {x} + {y} = {Result}";
+
+            /// 2. String.Format
+            //message = string.Format("Equation: {1} + {0} = {2}", x, y, Result);
+
+            /// 3. Composite Formatting
+            //Console.WriteLine("Equation: {0} + {1} = {2}", x, y, Result);
+
+            /// 4. String Concatination
+            //message = "Equation: " + x + " + " + y + " = " + Result;
+
+            //Console.WriteLine(message);
+            #endregion
+
+            #region Conditional Statements -if, switch with Numeric type using Constant Pattern
+            //Console.WriteLine("Enter month from First Quarter");
+            //int month = int.Parse(Console.ReadLine());
+
+            //if(month == 1)
+            //{
+            //    // Body
+            //    Console.WriteLine("Jan");
+            //}
+            //else if(month == 2)
+            //{
+            //    Console.WriteLine("Feb");
+            //}else if(month == 3)
+            //{
+            //    Console.WriteLine("Mar");
+            //}else
+            //{
+            //    Console.WriteLine("Invalid month number");
+            //}
+
+            // Jump table
+            //switch (month)
+            //{
+            //    case 1:
+            //        Console.WriteLine("Jan");
+            //        break;
+            //    case 2:
+            //        Console.WriteLine("Feb");
+            //        break;
+            //    case 3:
+            //        Console.WriteLine("March");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Invalid month number");
+            //        break;
+            //} 
+            #endregion
+
+            #region Conditional Statements -if, switch with Numeric type using Relational Pattern
+            //Console.WriteLine("Enter Your Age");
+            //int.TryParse(Console.ReadLine(), out int Age);
+
+            //if(Age > 22)
+            //{
+            //    Console.WriteLine("Age Greater Than 22");
+            //}
+            //else if(Age < 22)
+            //{
+            //    Console.WriteLine("Age Less Than 22");
+            //}
+            //else 
+            //{
+            //    Console.WriteLine("Age Equal to 22");
+            //}
+
+            // No Jump Table
+            //switch(Age)
+            //{
+            //    case > 22:
+            //        Console.WriteLine("Age Greater Than 22");
+            //        break;
+            //    case < 22:
+            //        Console.WriteLine("Age Less Than 22");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Age Equal to 22");
+            //        break;
+            //} 
+            #endregion
+
+            #region Conditional Statements Example 03 -if, switch With string Type
+            //Console.Write("Enter Your Name: ");
+            //string name = Console.ReadLine();
+
+            //if (name == "Abdelrhman" || name == "abdelrhman")
+            //{
+            //    Console.WriteLine("Hello Abdelrhman");
+            //}
+            //else if (name == "Shawky")
+            //{
+            //    Console.WriteLine("Hello Shawky");
+            //}
+            //else if (name == "Mohamed")
+            //{
+            //    Console.WriteLine("Hello Mohamed");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Hello Stranger");
+            //}
+
+
+            //switch (name)
+            //{
+            //    case "Abdelrhman":
+            //    case "abdelrhman":
+            //        Console.WriteLine("Hello Abdelrhman");
+            //        break;
+            //    case "Shawky":
+            //        Console.WriteLine("Hello Shawky");
+            //        break;
+            //    case "Mohamed":
+            //        Console.WriteLine("Hello Mohamed");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Hello Stranger");
+            //        break;
+            //} 
+            #endregion
+
+            #region Switch in C# 7.0
+            //object obj = 3.6;
+
+            #region Example 01 [Pattern Matching]
+            //switch (obj)
+            //{
+            //    case int number:
+            //        Console.WriteLine("Integer");
+            //        break;
+            //    case double number:
+            //        Console.WriteLine("double");
+            //        break;
+            //    case float number:
+            //        Console.WriteLine("float");
+            //        break;
+            //    default:
+            //        Console.WriteLine("No Match");
+            //        break;
+            //}
+            #endregion
+
+            #region Example 02 [Case Guard (when)]
+            //switch (obj)
+            //{
+            //    case int number when number < 15:
+            //        Console.WriteLine("Integer");
+            //        break;
+            //    case double number when number < 15.8 && number > 4.6:
+            //        Console.WriteLine("double");
+            //        break;
+            //    case float number:
+            //        Console.WriteLine("float");
+            //        break;
+            //    default:
+            //        Console.WriteLine("No Match");
+            //        break;
+            //} 
+            #endregion
+
+            #region Example 03 [User Defined Types]
+            //obj = new Person()
+            //{
+            //    Id = 7,
+            //    Name = "Abdelrhman"
+            //};
+
+            //switch (obj)
+            //{
+            //    case int number when number < 10:
+            //        Console.WriteLine("Integer");
+            //        break;
+            //    case double number:
+            //        Console.WriteLine("double");
+            //        break;
+            //    case float number:
+            //        Console.WriteLine("float");
+            //        break;
+            //    case Person person when person.Id == 7 && person.Name == "Abdelrhman":
+            //        Console.WriteLine("Hello Abdelrhman");
+            //        break;
+            //    default:
+            //        Console.WriteLine("No Match");
+            //        break;
+            //}
+            #endregion
+            #endregion
+
+            #region Switch in C# 8.0
+            #region Example 01 [Pattenr Matching without alias]
+            //object obj = 3.6;
+
+            //switch (obj)
+            //{
+            //    case int when (int)obj < 15:
+            //        Console.WriteLine("Integer");
+            //        break;
+            //    case double when (double)obj < 10.2 && (double)obj > 3.5:
+            //        Console.WriteLine("double");
+            //        break;
+            //    case float:
+            //        Console.WriteLine("float");
+            //        break;
+            //    default:
+            //        Console.WriteLine("No Match");
+            //        break;
+            //} 
+            #endregion
+
+            #region Example 02 [Switch Expression]
+            //string option = Console.ReadLine() ?? "Z";
+            //string message;
+
+            //switch(option)
+            //{
+            //    case "A":
+            //        //Console.WriteLine("Option 1");
+            //        message = "Option 1";
+            //        break;
+            //    case "B":
+            //        //Console.WriteLine("Option 2");
+            //        message = "Option 2";
+            //        break;
+            //    case "C":
+            //        //Console.WriteLine("Option 3");
+            //        message = "Option 3";
+            //        break;
+            //    case "D":
+            //        //Console.WriteLine("Option 4");
+            //        message = "Option 4";
+            //        break;
+            //    default:
+            //        //Console.WriteLine("Invalid Option");
+            //        message = "Invalid Option";
+            //        break;
+            //}
+
+            //message = option switch
+            //{
+            //    "A" => "Option 1",
+            //    "B" => "Option 2",
+            //    "C" => "Option 3",
+            //    "D" => "Option 4",
+            //    _ => "Invalid Option"
+            //};
+
+            //  Console.WriteLine(message);
+            #endregion
+
+            #region Example 03 [Property Pattern]
+            //Person person = new Person()
+            //{
+            //    Id = 1,
+            //    Name = "Abdelrhman",
+            //    Age = 20
+            //};
+
+            //string message = person switch
+            //{
+            //    { Id: 2, Name: "Mohamed", Age: 21 } => "Hello Mohamed",
+            //    { Name: "3oksh" } => "Hello 3oksh",
+            //    { Name: "Shawky", Age: 20 } => "Hello Shawky",
+            //    _ => "Hello Unknown"
+            //};
+
+            //Console.WriteLine(message); 
+            #endregion
+
+            #region Example 04 [Nullable Type - Reletional Patterns (Partially)]
+            //object obj = null;
+            //obj = 19;
+
+            //int? x = null;
+
+            //string message = x switch
+            //{
+            //    null => "Null",
+            //    int num when num <= 15 => "Number",
+            //    _ => "Invalid"
+            //};
+
+            //Console.WriteLine(message);
+            #endregion
+            #endregion
+
+            #region For, Foreach
+            //for(int i = 1; i <= 10; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            //int[] numbers = { 105, 106, 107, 108, 109 };
+
+            //Console.WriteLine(numbers[0]);
+            //Console.WriteLine(numbers[1]);
+            //Console.WriteLine(numbers[2]);
+            //Console.WriteLine(numbers[3]);
+            //Console.WriteLine(numbers[4]);
+
+            //for (int i = 0; i < numbers.Length /*5*/; i++)
+            //{
+            //    if( i == 2)
+            //    {
+            //        //continue;
+            //        break;
+            //    }
+            //    numbers[i] += 10;
+            //    Console.WriteLine(numbers[i]);
+            //}
+
+            //foreach (int number in numbers)
+            //{
+            //    //number += 10;
+            //    Console.WriteLine(number);
+            //} 
+            #endregion
+
+            #region while, do..while
+            #region do..while
+            //int Number;
+            //bool isParsed;
+
+            //do
+            //{
+            //    Console.Write("Enter Even Number: ");
+            //    isParsed = int.TryParse(Console.ReadLine(), out Number);
+            //} while(!isParsed || Number % 2 == 1); 
+            #endregion
+
+            #region while
+            //int Number;
+            //bool isParsed;
+
+            //Console.Write("Enter Even Number: ");
+            //isParsed = int.TryParse(Console.ReadLine(), out Number);
+
+            //while (!isParsed || Number % 2 == 1)
+            //{
+            //    Console.Write("Enter Even Number: ");
+            //    isParsed = int.TryParse(Console.ReadLine(), out Number);
+            //}
+
+            //int Number;
+            //Console.Write("Enter Number: ");
+            //int.TryParse(Console.ReadLine(), out Number);
+
+            //while(Number <= 10)
+            //{
+            //    Console.WriteLine(Number);
+            //    Number++;
+            //} 
+            #endregion
+            #endregion
+
+            #region string
+            #region Example 01
+            //string name01 = "abdo";
+            //string name02 = new string("abdo");
+            //string name02 = new string("May");
+
+            //Console.WriteLine($"name01 : {name01}");
+            //Console.WriteLine($"name01 HashCode : {name01.GetHashCode()}");
+            //Console.WriteLine($"name02 : {name02}");
+            //Console.WriteLine($"name02 HashCode : {name02.GetHashCode()}");
+
+            //name02 = name01;
+
+            //Console.WriteLine($"name01 : {name01}");
+            //Console.WriteLine($"name01 HashCode : {name01.GetHashCode()}");
+            //Console.WriteLine($"name02 : {name02}");
+            //Console.WriteLine($"name02 HashCode : {name02.GetHashCode()}");
+
+            //name01 = "Abdelrhman";
+
+            //Console.WriteLine($"name01 : {name01}");
+            //Console.WriteLine($"name01 HashCode : {name01.GetHashCode()}");
+            //Console.WriteLine($"name02 : {name02}");
+            //Console.WriteLine($"name02 HashCode : {name02.GetHashCode()}"); 
+            #endregion
+
+            //#region Example 02
+            //string s = "Hello";
+
+            //Console.WriteLine($"name01 : {s}");
+            //Console.WriteLine($"name01 HashCode : {s.GetHashCode()}");
+
+            //s += " World";
+
+            //Console.WriteLine($"name01 : {s}");
+            //Console.WriteLine($"name01 HashCode : {s.GetHashCode()}");
+            //string s = "hello";
+            //string s2 = s;
+            //s2 += 'a';
+            //Console.WriteLine(s2);  
+            //Console.WriteLine(s);   
+            #endregion
+
+            #region string methods
+            //string s = " Hello World ";
+
+            //Console.WriteLine(s.Length); //--> this will return the length of the string
+
+            //Console.WriteLine(s.ToUpper()); //--> this will convert the string to upper case
+
+            //Console.WriteLine(s.ToLower()); //--> this will convert the string to lower case
+
+            //Console.Write(s.Trim());// --> this will remove the leading and trailing white spaces from the string
+
+            //Console.Write(s.TrimEnd());// --> this will remove the trailing white spaces from the string
+
+            //Console.Write(s.TrimStart()); //--> this will remove the leading white spaces from the string
+
+            //Console.WriteLine(s.Substring(1, 5));// --> this will return a substring of the string starting from index 1 and length 5
+
+            //Console.WriteLine(s.Substring(1)); //--> this will return a substring of the string starting from index 1 to the end of the string
+
+            //Console.WriteLine(s.Replace('o', 'A')); //--> this will replace all occurrences of 'o' with 'A' in the string
+
+            //Console.WriteLine(s.Contains('o')); //--> this will check if the string contains 'o' and return true or false
+
+            //Console.WriteLine(s.Contains('A')); //--> this will check if the string contains 'A' and return true or false
+            #endregion
+
+
+            #region StringBuilder
+            #region StringBuilder
+            //StringBuilder sb = new StringBuilder("Hello");
+
+            //Console.WriteLine($"sb : {sb}");
+            //Console.WriteLine($"sb HashCode : {sb.GetHashCode()}");
+
+            //sb.Append(" World");
+
+            //Console.WriteLine($"sb : {sb}");
+            //Console.WriteLine($"sb HashCode : {sb.GetHashCode()}");
+            #endregion
+
+            #region StringBuilder methods
+            // StringBuilder sb = new StringBuilder("Hello");// --> this will create a new StringBuilder object with the initial value "Hello"
+
+            //sb.AppendLine(", World"); //--> this will append " World" to the StringBuilder and add a new line at the end
+
+            //sb.Append("welcome"); //--> this will append "welcome" to the StringBuilder
+
+            //sb.Replace("welcome", "Route");// --> this will replace "welcome" with "Route" in the StringBuilder
+
+            //sb.Clear(); //--> this will clear the StringBuilder, removing all its content
+
+            //sb.Remove(5, 6); //--> this will remove 6 characters starting from index 5 in the StringBuilder
+
+            //sb.Insert(0, "mohamed shawky "); //--> this will insert "Abdelrhman Essam " at the beginning of the StringBuilder
+
+            // sb.AppendFormat("Equation: {0} + {1} = {2}", 10, 5, 15);// --> this will append a formatted string to the StringBuilder
+
+            // sb.AppendJoin(',', "Omar", "Ahmed", "Mohamed", "Ali"); //--> this will append a comma-separated list of names to the StringBuilder
+
+            //Console.WriteLine(sb);// --> this will print the content of the StringBuilder to the console
+            // Console.WriteLine(sb.MaxCapacity);//-->get MaxCapacity of sb
+            //StringBuilder s1=new StringBuilder("hello");
+            //StringBuilder s2 = new StringBuilder();
+            //s2 = s1;
+            //s2.Append(" mo");
+            //Console.WriteLine(s2);  
+            //Console.WriteLine(s1); 
+            // s1,s2 point to same address 
+
+            #endregion
+            #endregion
+        }
+    }
+}
