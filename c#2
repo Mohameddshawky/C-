@@ -1,0 +1,203 @@
+using System.Net.Http.Headers;
+using System.Text;
+
+namespace C_Course
+{
+    //class Enum interface struct 
+    internal class Program
+    {
+        #region Functions
+        // 1. Methods
+        // 1.1 Class Member Method [Static]
+        // 1.2 Object Member Method [Non Static]
+        public static void PrintShape(int n = 1, string shape = "*__*")
+        {
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(shape);
+            }
+        }
+
+        //public static void Swap(int x, int y)
+        //{
+        //    Console.WriteLine("Swap Method");
+        //    Console.WriteLine(x);
+        //    Console.WriteLine(y);
+        //    int temp = x;
+        //    x = y;
+        //    y = temp;
+        //    Console.WriteLine("After Swapping");
+        //    Console.WriteLine(x);
+        //    Console.WriteLine(y);
+        //}
+        //public static void Swap(ref int x, ref int y)
+        //{
+        //    Console.WriteLine("Swap Method");
+        //    Console.WriteLine(x);
+        //    Console.WriteLine(y);
+        //    int temp = x;
+        //    x = y;
+        //    y = temp;
+        //    Console.WriteLine("After Swapping");
+        //    Console.WriteLine(x);
+        //    Console.WriteLine(y);
+        //}
+
+        //public static int SumArray(ref int[] arr)
+        //{
+        //    int sum = 0;
+        //    arr[0] = 100;
+        //    foreach(int i in arr)
+        //    {
+        //        sum += i;
+        //    }
+        //    return sum;
+        //}
+        //public static int SumArray(ref int[] arr)
+        //{
+        //    int sum = 0;
+        //    arr = new int[] { 10, 20, 30, 40 };
+        //    foreach (int i in arr)
+        //    {
+        //        sum += i;
+        //    }
+        //    return sum;
+        //}
+
+        //public static void SumSub(int x, int y, out int sum, out int sub)
+        //{
+        //    sum = x + y;
+        //    sub = x - y;
+        //    //return sum, sub;
+        //    //return sum;
+        //    //return sub;
+        //    //return new int[] { sum, sub };
+        //    //return [sum, sub];
+        //}
+
+        //public static int Sum(params int[] arr)
+        //{
+        //    int sum = 0;
+        //    foreach (int i in arr)
+        //    {
+        //        sum += i;
+        //    }
+        //    return sum;
+        //}
+        //public static void Concat(params List<object> list)
+        //{
+        //    // Body
+
+        //} 
+        #endregion
+        static void Main(string[] args)
+        {
+            #region 1D Array
+            //fixed size, reference type
+
+            // allocate 4 byte in stack
+            // int[] num= new int[4] { 1,2,3,4};
+            // int[] num = new int[] { 1, 2, 3, 4 };
+            //int[] num = { 1, 2, 3, 4 };
+            //int[] num =  [ 1, 2, 3, 4 ];
+            // allocate 16 byte in heap
+            //intialize default value 0
+            // call ctor if exist
+            //assign ref in stack into instance in heap
+
+            //int[] num = new int[3];
+            //Array.Fill(num, 3);
+
+            // Array ar = Array.CreateInstance(typeof(int), 3);
+            // ar.SetValue(10, 0);
+            //Console.WriteLine( ar.GetValue(0));
+            //int[] num = new int[4];
+            //Console.WriteLine(num.Rank);//1D
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    num[i] = int.Parse(Console.ReadLine());
+            //}
+
+            //foreach (int i in num)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            #endregion
+
+            #region 2D Array
+            //int[,] mark = new int[2, 5] { {100,90,100,100,100 },
+            //    { 99,99,98,99,88} };//row,col
+            ////mark[0, 0] = 100;
+            ////for (int i = 0; i < 2; i++)
+            ////{
+            ////    for (int j = 0; j < 5; j++)
+            ////    {
+            ////        Console.Write(mark[i,j]+" ");
+            ////    }
+            ////    Console.WriteLine();
+            ////}
+            ////Console.WriteLine(mark.Length + " " + mark.Rank);//10 2
+            //Console.WriteLine(mark.GetLength(0));//to get num of row
+            //Console.WriteLine(mark.GetLength(1));//num of col
+
+
+            #endregion
+
+            #region Judged Array
+            //int[][] mark =new int  [3][];
+            //mark[0]=new int[3] { 10,20,30};
+            //mark[1] = new int[2] { 100, 99 };
+            //mark[2] = new int[1] { 100 };
+            //int [][] mark2 = [new int[2] {1,2},new int[1] {1}];
+            //Console.WriteLine(mark.Length);
+            //for (int i = 0; i < mark.Length; i++)
+            //{
+            //    for (int j = 0; j < mark[i].Length; j++)
+            //    {
+            //        Console.WriteLine(mark[i][j] );
+            //    }
+            //}            
+            #endregion
+
+            #region Array method
+            //1 static method (class member method)
+            //int[] arr = { 1,5, 2, 4, 6, 5 };
+            //Array.Sort(arr);
+            //foreach (var item in arr)Console.WriteLine(item);
+
+            //Array.Reverse(arr);
+            //foreach (var item in arr) Console.WriteLine(item);
+
+            //int []arr2=new int[arr.Length];
+            //Array.Copy(arr, arr2, 3);//source ,dest,length
+            //foreach (var item in arr2) Console.WriteLine(item);
+
+            //Array.ConstrainedCopy(arr, 1, arr2, 1, 3);
+            //foreach (var item in arr2) Console.WriteLine(item);
+
+            //Console.WriteLine(Array.IndexOf(arr, 5));//first element in arr
+            //Console.WriteLine(Array.LastIndexOf(arr, 5));//last element in arr
+
+            //int[] arr = (int[])Array.CreateInstance(typeof(int), 3);//return array in general
+            //arr[2] = 1;
+
+
+
+            // 2 (object member method)
+
+            //int[] num = { 1, 2, 3 };
+            //int[] num2 = new int[3];
+            //num.CopyTo(num2, 0);
+            //foreach (var item in num2) Console.WriteLine(item);
+
+            //num.SetValue(10, 1);
+            //Console.WriteLine(num[1]);
+            //Console.WriteLine(num.GetValue(1));
+            #endregion
+
+
+            //PrintShape(shape:"/*/*"); passing py name
+        }
+    }
+}
